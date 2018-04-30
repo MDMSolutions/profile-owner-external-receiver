@@ -1,0 +1,127 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:18:1-61:12
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:18:1-61:12
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:18:1-61:12
+MERGED from [com.android.support:support-v13:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-v13-27.0.2.aar/65a6a1294b98f11f47608a2ea1ebd731/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/d5b3a986990566f072c539854b6ad168/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/3e5daab68258ed6112d3ef95f5bfd12f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/1a8863dc77ef77a664297350ffc66d54/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/49d0b4b99a6818bb42b14f8eac4d0090/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/f0f839eb087ab3b6fe47bf9d98c3a0b1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/8115da1c4a8d80b5e9c159e81094421d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/085637ad3e1fd3885a8e60c3f854ba80/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/82e3fc99c166afc4ae9ea7de73864313/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/0299e7ef5308ceb709f6791a0af48b5b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/db15f3aabf7e54bcfd317b3d28a3e7f6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/pablo/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/60d45b75c7591f1695bf844cb9a146bd/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:18:1-61:12
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:18:1-61:12
+	package
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:19:5-54
+	android:versionName
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:23:5-30
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:21:5-51
+	xmlns:android
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:20:5-63
+	android:versionCode
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:22:5-28
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+application
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:25:1-58:19
+	android:label
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:27:9-41
+	tools:ignore
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:30:9-48
+	android:icon
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:26:9-43
+	android:allowBackup
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:29:9-35
+	android:theme
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:28:9-40
+activity#com.example.android.basicmanagedprofile.MainActivity
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:32:9-39:20
+	android:label
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:34:13-45
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:33:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:35:13-38:29
+action#android.intent.action.MAIN
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:36:17-68
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:36:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:37:17-76
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:37:27-74
+activity#com.example.android.basicmanagedprofile.EnableProfileActivity
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:41:9-43:47
+	android:label
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:43:13-45
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:42:13-50
+receiver#com.example.android.basicmanagedprofile.BasicDeviceAdminReceiver
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:45:9-56:20
+	android:label
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:48:13-45
+	android:permission
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:49:13-70
+	android:description
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:47:13-51
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:46:13-53
+meta-data#android.app.device_admin
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:50:13-52:70
+	android:resource
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:52:17-68
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:51:17-56
+intent-filter#android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:53:13-55:29
+action#android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:54:17-81
+	android:name
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml:54:25-79
+uses-sdk
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+MERGED from [com.android.support:support-v13:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-v13-27.0.2.aar/65a6a1294b98f11f47608a2ea1ebd731/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-v13-27.0.2.aar/65a6a1294b98f11f47608a2ea1ebd731/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/d5b3a986990566f072c539854b6ad168/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/d5b3a986990566f072c539854b6ad168/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/3e5daab68258ed6112d3ef95f5bfd12f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/3e5daab68258ed6112d3ef95f5bfd12f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/1a8863dc77ef77a664297350ffc66d54/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/1a8863dc77ef77a664297350ffc66d54/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/49d0b4b99a6818bb42b14f8eac4d0090/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/49d0b4b99a6818bb42b14f8eac4d0090/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/f0f839eb087ab3b6fe47bf9d98c3a0b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/f0f839eb087ab3b6fe47bf9d98c3a0b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/8115da1c4a8d80b5e9c159e81094421d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/8115da1c4a8d80b5e9c159e81094421d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/085637ad3e1fd3885a8e60c3f854ba80/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/085637ad3e1fd3885a8e60c3f854ba80/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/82e3fc99c166afc4ae9ea7de73864313/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/82e3fc99c166afc4ae9ea7de73864313/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/0299e7ef5308ceb709f6791a0af48b5b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/0299e7ef5308ceb709f6791a0af48b5b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/db15f3aabf7e54bcfd317b3d28a3e7f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /home/pablo/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/db15f3aabf7e54bcfd317b3d28a3e7f6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/pablo/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/60d45b75c7591f1695bf844cb9a146bd/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/pablo/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/60d45b75c7591f1695bf844cb9a146bd/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+		ADDED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml
+		INJECTED from /home/pablo/android-BasicManagedProfile/Application/src/main/AndroidManifest.xml

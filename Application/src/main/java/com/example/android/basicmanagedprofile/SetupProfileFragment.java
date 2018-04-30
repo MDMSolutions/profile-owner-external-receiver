@@ -23,6 +23,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,13 @@ public class SetupProfileFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.set_up_profile: {
-                provisionManagedProfile();
+                //provisionManagedProfile();
+                Log.d("gay demais","pra caramba");
+                Intent intent = new Intent("mobi.pulsus.INSTALL_PROFILE_OWNER");
+                intent.setPackage("com.example.android.basicmanagedprofile");
+                intent.putExtra("app", "teste");
+                getActivity().sendBroadcast(intent);
+
                 break;
             }
         }

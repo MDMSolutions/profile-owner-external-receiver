@@ -16,11 +16,14 @@
 
 package com.example.android.basicmanagedprofile;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.admin.DevicePolicyManager;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,6 +32,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +44,8 @@ import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 import static android.app.admin.DevicePolicyManager.FLAG_MANAGED_CAN_ACCESS_PARENT;
 import static android.app.admin.DevicePolicyManager.FLAG_PARENT_CAN_ACCESS_MANAGED;
@@ -58,11 +65,6 @@ public class BasicManagedProfileFragment extends Fragment
     private static final String TAG = "ManagedProfileFragment";
 
     /**
-     * Package name of calculator
-     */
-    private static final String PACKAGE_NAME_CALCULATOR = "com.android.calculator2";
-
-    /**
      * Package name of Chrome
      */
     private static final String PACKAGE_NAME_CHROME = "com.android.chrome";
@@ -71,11 +73,6 @@ public class BasicManagedProfileFragment extends Fragment
      * {@link Button} to remove this managed profile.
      */
     private Button mButtonRemoveProfile;
-
-    /**
-     * Whether the calculator app is enabled in this profile
-     */
-    private boolean mCalculatorEnabled;
 
     /**
      * Whether Chrome is enabled in this profile
@@ -98,8 +95,6 @@ public class BasicManagedProfileFragment extends Fragment
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        // Retrieves whether the calculator app is enabled in this profile
-        mCalculatorEnabled = isApplicationEnabled(PACKAGE_NAME_CALCULATOR);
         // Retrieves whether Chrome is enabled in this profile
         mChromeEnabled = isApplicationEnabled(PACKAGE_NAME_CHROME);
     }
@@ -147,9 +142,6 @@ public class BasicManagedProfileFragment extends Fragment
         view.findViewById(R.id.send_intent).setOnClickListener(this);
         mButtonRemoveProfile = (Button) view.findViewById(R.id.remove_profile);
         mButtonRemoveProfile.setOnClickListener(this);
-        Switch toggleCalculator = (Switch) view.findViewById(R.id.toggle_calculator);
-        toggleCalculator.setChecked(mCalculatorEnabled);
-        toggleCalculator.setOnCheckedChangeListener(this);
         Switch toggleChrome = (Switch) view.findViewById(R.id.toggle_chrome);
         toggleChrome.setChecked(mChromeEnabled);
         toggleChrome.setOnCheckedChangeListener(this);
@@ -189,11 +181,6 @@ public class BasicManagedProfileFragment extends Fragment
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
         switch (compoundButton.getId()) {
-            case R.id.toggle_calculator: {
-                setAppEnabled(PACKAGE_NAME_CALCULATOR, checked);
-                mCalculatorEnabled = checked;
-                break;
-            }
             case R.id.toggle_chrome: {
                 setAppEnabled(PACKAGE_NAME_CHROME, checked);
                 mChromeEnabled = checked;
@@ -263,6 +250,8 @@ public class BasicManagedProfileFragment extends Fragment
         final DevicePolicyManager manager =
             (DevicePolicyManager) activity.getSystemService(Context.DEVICE_POLICY_SERVICE);
         final Bundle settings = new Bundle();
+
+        listUsers(manager);
         settings.putString("EditBookmarksEnabled", "false");
         settings.putString("IncognitoModeAvailability", "1");
         settings.putString("ManagedBookmarks",
@@ -304,24 +293,55 @@ public class BasicManagedProfileFragment extends Fragment
                 .show();
     }
 
+    @TargetApi(Build.VERSION_CODES.O)
+    private void listUsers(DevicePolicyManager dpc){
+        Activity activity = getActivity();
+        if (activity != null) {
+            try {
+                ComponentName componentName = BasicDeviceAdminReceiver.getComponentName(activity);
+                List<UserHandle> userList = dpc.getBindDeviceAdminTargetUsers(componentName);
+
+                Log.d("Android user list", String.valueOf(userList.size()));
+                for (UserHandle user : userList) {
+                    Log.d("Android user: ", user.toString());
+                }
+            } catch (Exception e) {
+                Log.d(TAG, "blowed!!" + e.getMessage());
+            }
+        } else {
+            Log.d(TAG, "could not launch the activity");
+        }
+    }
+
     /**
      * Clears restrictions to Chrome
      */
     private void clearChromeRestrictions() {
-        final Activity activity = getActivity();
-        if (null == activity) {
-            return;
-        }
-        final DevicePolicyManager manager =
-                (DevicePolicyManager) activity.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        // In order to clear restrictions, pass null as the restriction Bundle for
-        // setApplicationRestrictions
-        manager.setApplicationRestrictions
-                (BasicDeviceAdminReceiver.getComponentName(activity),
-                        PACKAGE_NAME_CHROME, null);
-        Toast.makeText(activity, R.string.cleared, Toast.LENGTH_SHORT).show();
-    }
+//        final Activity activity = getActivity();
+//        if (null == activity) {
+//            return;
+//        }
+//        final DevicePolicyManager manager =
+//                (DevicePolicyManager) activity.getSystemService(Context.DEVICE_POLICY_SERVICE);
+//        // In order to clear restrictions, pass null as the restriction Bundle for
+//        // setApplicationRestrictions
+//        manager.setApplicationRestrictions
+//                (BasicDeviceAdminReceiver.getComponentName(activity),
+//                        PACKAGE_NAME_CHROME, null);
+//        Toast.makeText(activity, R.string.cleared, Toast.LENGTH_SHORT).show();
+//
 
+    }
+    private BroadcastReceiver progressListener = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            DevicePolicyManager manager = (DevicePolicyManager)
+                    getActivity().getSystemService(Context.DEVICE_POLICY_SERVICE);
+
+            Log.d("outside world", "UHUUUUUUUUUUUUUUUL " + manager.isProfileOwnerApp(getActivity().getApplicationContext().getPackageName()));
+
+        }
+    };
     /**
      * Enables forwarding of share intent between private account and managed profile.
      */
@@ -333,13 +353,16 @@ public class BasicManagedProfileFragment extends Fragment
         DevicePolicyManager manager =
                 (DevicePolicyManager) activity.getSystemService(Context.DEVICE_POLICY_SERVICE);
         try {
-            IntentFilter filter = new IntentFilter(Intent.ACTION_SEND);
-            filter.addDataType("text/plain");
-            filter.addDataType("image/jpeg");
+            IntentFilter filter = new IntentFilter("mobi.pulsus.INSTALL_PROFILE_OWNER");
+//            filter.addDataType("text/plain");
+//            filter.addDataType("image/jpeg");
             // This is how you can register an IntentFilter as allowed pattern of Intent forwarding
+            getActivity().registerReceiver(progressListener, filter);
             manager.addCrossProfileIntentFilter(BasicDeviceAdminReceiver.getComponentName(activity),
                     filter, FLAG_MANAGED_CAN_ACCESS_PARENT | FLAG_PARENT_CAN_ACCESS_MANAGED);
-        } catch (IntentFilter.MalformedMimeTypeException e) {
+            //getActivity().registerReceiver(progressListener, filter);
+            Log.d("CHE", "GAY");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

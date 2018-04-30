@@ -58,6 +58,8 @@ public class EnableProfileActivity extends Activity implements View.OnClickListe
             case R.id.icon: {
                 // Opens up the main screen
                 startActivity(new Intent(this, MainActivity.class));
+
+
                 finish();
                 break;
             }
